@@ -1,4 +1,4 @@
-import {Icon} from './global'
+import Icon from "./icon"
 import { timeline } from '../tools/media'
 import PageTitle from './page-title'
 

@@ -1,5 +1,5 @@
 import {reply,react,retweet,share} from '../tools/media'
-import {Icon} from './global'
+import Icon from "./icon"
 
 function TweetActions({data}){
   let actions =  [[reply,data.reply], [retweet, data.retweet], [react, data.react],[share]]

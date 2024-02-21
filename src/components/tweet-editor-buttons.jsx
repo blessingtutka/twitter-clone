@@ -1,4 +1,4 @@
-import { Button } from './global';
+import Button from './button';
 import TweetEditorActions from './tweet-editor-actions'
 
 function TweetEditorButtons(){
