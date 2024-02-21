@@ -4,7 +4,7 @@ let data = {
         username:'name',
         profile:profile1,
     },
-    medias:{
+    media:{
         1:{
             author:'CNN',
             detail:'CNN',
