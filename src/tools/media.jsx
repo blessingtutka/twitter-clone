@@ -12,10 +12,10 @@ import share from '../assets/svg/Share.svg'
 import twitter from '../assets/svg/Twitter.svg'
 import verified from '../assets/svg/Verified.svg'
 // Profiles
-import profile1 from '../assets/Profile-Photo.jpg'
-import profile2 from '../assets/image-1-2.png'
-import profile3 from '../assets/image-1.png'
-import profile4 from '../assets/Profile-Photo-3.png'
+import userAvatar from '../assets/Profile-Photo.jpg'
+import avatar1 from '../assets/image-1-2.png'
+import avatar2 from '../assets/image-1.png'
+import avatar3 from '../assets/Profile-Photo-3.png'
 // Tweet Image
 import image1 from '../assets/image-3.png'
 
@@ -31,9 +31,9 @@ export {timeline,
     share,
     twitter,
     verified,
-    profile1,
-    profile2,
-    profile3,
-    profile4,
+    userAvatar,
+    avatar1,
+    avatar2,
+    avatar3,
     image1,
 }

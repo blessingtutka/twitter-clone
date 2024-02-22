@@ -1,4 +1,4 @@
-import ProfilePhoto from "./profile-photo"
+import ProfilePhoto from "../global/profile-photo"
 import TweetEditorForm  from "./tweet-editor-form"
 function TweetEditor({profile}) {
   return (

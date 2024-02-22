@@ -3,7 +3,7 @@ import TweetContent from "./tweet-content"
 function Tweet({tweet}) {
     return (
       <div className='tweet'>
-        <TweetAvatar profile={tweet.profile} />
+        <TweetAvatar avatar={tweet.avatar} />
         <TweetContent tweet={tweet} />
       </div>
     )

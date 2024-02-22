@@ -1,7 +1,7 @@
 
-import Header from "./header"
-import TweetEditor from "./tweet-editor"
-import Tweet from "./tweet"
+import Header from "./header/header"
+import TweetEditor from "./tweet-editor/tweet-editor"
+import Tweet from "./tweet/tweet"
 import data from "../tools/data"
 
 const {user, media} = data

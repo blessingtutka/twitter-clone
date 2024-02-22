@@ -1,5 +1,5 @@
-import {emoji,gif,poll,media,schedule} from '../tools/media'
-import Icon from "./icon"
+import {emoji,gif,poll,media,schedule} from '../../tools/media'
+import Icon from "../global/icon"
 
 function TweetEditorActions(){
   let actions =  [media, gif, poll,emoji, schedule ]
