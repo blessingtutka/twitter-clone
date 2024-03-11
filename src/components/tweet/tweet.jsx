@@ -4,7 +4,7 @@ function Tweet({tweet}) {
 
     return (
       <div className='tweet'>
-        <TweetAvatar avatar={tweet.avatar} />
+        <TweetAvatar avatar={tweet.avatar} username={tweet.title.author} />
         <TweetContent tweet={tweet} />
       </div>
     )

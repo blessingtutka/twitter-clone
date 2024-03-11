@@ -1,8 +1,9 @@
 import ProfilePhoto  from "../global/profile-photo"
-function TweetAvatar({avatar}) {
+import {Link} from "react-router-dom"
+function TweetAvatar({avatar,username}) {
     return (
         <div className='tweet-avatar'>
-          <ProfilePhoto src={avatar} />
+          <Link to={'/user/' + username}><ProfilePhoto src={avatar} /></Link>
         </div>
     )
 }
