@@ -2,6 +2,8 @@ import React from 'react'
 
 export default function Trends() {
   return (
-    <div></div>
+    <div className='trends'> 
+
+    </div>
   )
 }
