@@ -21,6 +21,7 @@ body{
 }
 /* ===================== Layout ============================  */
 .layout{
+    position: relative;
     width: 100%;
     display: flex;
     justify-content: space-between;
@@ -29,11 +30,16 @@ body{
     width: 21%;
 }
 .main-content {
-    width: 50%;
+    width: 49%;
     margin-left: 21.2%;
 }
 .trends {
     width: 28%;
+}
+.trends.fixed {
+    position: fixed!important;
+    bottom: 0px!important;
+    top: unset;
 }
 /* ===================== Sidebar ============================  */
 .sidebar {
@@ -93,10 +99,145 @@ body{
     height: 50px;
 
 }
+/* Search Bar */
+.search-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: #202327;
+    border-radius: 50px;
+    padding: 10px 15px;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+  
+  .search-input {
+    background-color: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    width: 100%;
+    padding-left: 30px;
+    color: #fff;
+  }
+  
+  .search-input::placeholder {
+    color: #fff;
+  }
+  
+  .search-icon {
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+    color: #333;
+  }
+  
+  .search-icon .icon {
+    width: 18px;
+    height: 18px;
+  }
 /* ===================== Trends ============================  */
 .trends{
-    position: fixed;
+   position: sticky;
+   right: 0;
+   top: 0;
+   padding: 15px;
+   box-sizing: border-box;
+   
 }
+.trend{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.trend-title{
+    display: flex;
+    justify-content: space-between;
+}
+.trend-title h3{
+    margin: 0px;
+    font-weight: bolder;
+}
+.trend-box{
+    background: #202327;
+    border-radius: 15px;
+    padding: 15px;
+    margin: 20px 0px;
+}
+.trend-item {
+    display: flex;
+    justify-content: space-between;
+}
+.trend-item div:first-child {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 4px;
+}
+.trend-item span{
+    display: block;
+    flex: none;
+    order: 0;
+    flex-grow: 0;
+}
+.trend-item span:first-child, .trend-item span:last-child{
+    color: #6E767D;
+}
+.trend-item span:nth-child(2){
+    color: #FFFFFF;
+}
+.trends a {
+    text-decoration: none;
+    color: #1D9BF0;
+    font-weight: bolder;
+}
+/* Follow */
+.follow{
+    display: flex;
+    flex-direction: column;
+    gap: 40px;    
+}
+.follow-title h3 {
+    margin: 0;
+}
+.follow-item{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.follow-item .info{
+    display: flex;
+    justify-content:flex-start;
+    align-items: center;
+    gap: 5px;
+}
+.follow-item .info .avatar{
+    width: 60px;
+    height: 60px;
+    flex: 0 0 60px;
+}
+.follow-info{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+.follow-info span:last-child{
+    color: #6E767D;
+}
+.btn-follow{
+    text-align: center;
+    background-color: #FFFFFF !important;
+    color: #000000 !important;
+    padding: 7px 15px !important;
+    border-radius: 32px;
+    height: 30px;
+}
+
+
 /* ===================== Timeline ============================  */
 .timeline {
     flex: 0 0 800px;
@@ -170,6 +311,7 @@ body{
     display: flex;
     align-items: center;
     justify-content: flex-start;
+    flex-wrap: wrap;
     /*padding: 0.8rem 0;*/
     gap: 1rem;
 }
@@ -264,8 +406,10 @@ body{
 .tweet-actions {
     display: flex;
     justify-content: start;
+    flex-wrap: wrap;
     align-items: center;
     gap: 5rem;
+    row-gap: 10px;
     color: grey;
     font-size: 1rem;
 }
@@ -282,7 +426,17 @@ body{
     justify-content: center;
     gap: 20px;
 }
+
 /* ===================== Responsive ============================  */
+@media (min-width: 992px) and (max-width: 1115px) {
+
+    .tweet-actions{
+        gap: 3rem;
+    }
+    .tweet-action{
+        gap: 10px;
+    }
+}
 @media (max-width: 992px) {
     .main-content {
         min-width: calc(100% - 75px);
@@ -320,8 +474,30 @@ body{
     .sidebar .account .icon, .sidebar .account .account-info{
         display: none;
     }
+    .tweet-actions{
+        gap: 2rem;
+    }
 }
-
+@media (max-width: 768px) {
+    .tweet-avatar{
+        width: 50px;
+        height: 50px;
+        flex: 0 0 50px;
+    }
+    .avatar{
+        width: 50px;
+        height: 50px;
+    }
+    .tweet-actions{
+        gap: 20px;
+    }
+    .tweet-action{
+        gap: 5px;
+    }
+    .tweet-editor-actions{
+        gap: .6rem;
+    }
+}
 
 @media (max-width: 448px) {
     .sidebar {
@@ -330,5 +506,20 @@ body{
     .main-content{
         margin-left: 0px;
         width: 100%;
+    }
+    .tweet-avatar{
+        width: 40px;
+        height: 40px;
+        flex: 0 0 40px;
+    }
+    .avatar{
+        width: 40px;
+        height: 40px;
+    }
+    .tweet-actions{
+        gap: 10px;
+    }
+    .tweet-action{
+        gap: 3px;
     }
 }

@@ -14,6 +14,8 @@ import twitter from '../assets/svg/Twitter.svg'
 import verified from '../assets/svg/Verified.svg'
 import privat from '../assets/svg/Private.svg'
 import dot3 from '../assets/svg/More-2.svg'
+import setting from '../assets/svg/Settings.svg'
+import search from '../assets/svg/Group.svg'
 // Nav
 import Home from '../assets/svg/Home.svg'
 import Hash from '../assets/svg/Hash.svg'
@@ -47,6 +49,8 @@ export {
     verified,
     privat,
     dot3,
+    setting,
+    search,
     // Nav
     Home,
     Hash,
