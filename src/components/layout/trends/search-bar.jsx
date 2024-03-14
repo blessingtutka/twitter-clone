@@ -3,7 +3,7 @@ import Icon from '../../global/icon'
 import {search} from '../../../tools/media'
 export default function SearchBar() {
     return (
-        <div className="search-wrapper">
+        <div className="search-wrapper" role='button'>
           <form action="/search" method="get">
             <input type="text" className="search-input" placeholder="Search Twitter" />
             <button type="submit" className="search-icon">

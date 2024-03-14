@@ -1,5 +1,6 @@
 import FollowItem from "./follow-item"
 import FollowTitle from "./follow-title"
+import {Link} from 'react-router-dom'
 import { avatar1,avatar2,avatar3 } from "../../../tools/media"
 import More from "./more"
 export default function Follow() {
@@ -10,7 +11,7 @@ export default function Follow() {
         {tofollow.map((follow,key) => {
           let [avatar,author, username] = follow
           return (
-            <FollowItem key={key} avatar={avatar} author={author} username={username} link={'/user/' + username} />
+            <FollowItem key={key}  avatar={avatar} author={author} username={username}/>
           )
         })}
         <More />

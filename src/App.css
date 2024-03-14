@@ -124,7 +124,11 @@ body{
   .search-input::placeholder {
     color: #fff;
   }
-  
+  .search-wrapper:focus {
+    border-color: #1da1f2;
+    box-shadow: 0 0 5px rgba(29, 161, 242, 0.5);
+    outline: none;
+  }
   .search-icon {
     position: absolute;
     left: 10px;
@@ -149,29 +153,50 @@ body{
    box-sizing: border-box;
    
 }
+.trend-box{
+    background: #202327;
+    border-radius: 15px;
+    padding-top: 15px;
+    margin: 20px 0px;
+}
+.trend-box h3{
+    margin: 0px;
+    font-weight: bolder;
+}
+.trend-title, .follow-title{
+    padding: 0px 12px 16px 12px;
+}
+.trends a {
+    text-decoration: none;
+    color: #1D9BF0;
+    font-weight: bolder;
+    padding: 16px;
+    border-bottom-right-radius: 15px;
+    border-bottom-left-radius: 15px;
+}
+.trends a:hover{
+    background-color:#1D1F23;
+}
+/* Trend */
 .trend{
     display: flex;
     flex-direction: column;
-    gap: 20px;
 }
 .trend-title{
     display: flex;
     justify-content: space-between;
 }
-.trend-title h3{
-    margin: 0px;
-    font-weight: bolder;
-}
-.trend-box{
-    background: #202327;
-    border-radius: 15px;
-    padding: 15px;
-    margin: 20px 0px;
-}
+
 .trend-item {
     display: flex;
     justify-content: space-between;
+    cursor: pointer;
+    padding: 12px 16px;
 }
+.trend-item:hover{
+    background-color: #1D1F23;
+}
+
 .trend-item div:first-child {
     display: flex;
     flex-direction: column;
@@ -190,24 +215,22 @@ body{
 .trend-item span:nth-child(2){
     color: #FFFFFF;
 }
-.trends a {
-    text-decoration: none;
-    color: #1D9BF0;
-    font-weight: bolder;
-}
+
 /* Follow */
 .follow{
     display: flex;
-    flex-direction: column;
-    gap: 40px;    
+    flex-direction: column;   
 }
-.follow-title h3 {
-    margin: 0;
-}
+
 .follow-item{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    cursor: pointer;
+    padding: 12px 16px;
+}
+.follow-item:hover{
+    background-color: #1D1F23;
 }
 .follow-item .info{
     display: flex;
@@ -234,9 +257,26 @@ body{
     color: #000000 !important;
     padding: 7px 15px !important;
     border-radius: 32px;
+ 
     height: 30px;
+    cursor: pointer;
+    box-sizing: border-box;
 }
-
+.btn-follow.following{
+    border: 1px solid #D7DBDC;
+    color: #fff !important;
+    background-color: transparent !important;
+}
+.btn-follow:hover{
+    background-color: #D7DBDC!important;
+    
+}
+.btn-follow.following:hover{
+    border-color:  rgb(103, 7, 15);
+    background-color: rgba(103, 7, 15, .15)!important;
+    color: #B51F2B!important;
+    font-weight: bolder;
+}
 
 /* ===================== Timeline ============================  */
 .timeline {
@@ -408,7 +448,7 @@ body{
     justify-content: start;
     flex-wrap: wrap;
     align-items: center;
-    gap: 5rem;
+    gap: 4rem;
     row-gap: 10px;
     color: grey;
     font-size: 1rem;
@@ -424,14 +464,44 @@ body{
     display: flex;
     align-items: center;
     justify-content: center;
-    gap: 20px;
+    gap: 15px;
+}
+.tweet-action:first-child:hover span{
+    color: #1DA1F2;    
+}
+.tweet-action:nth-child(2):hover span{
+    color: #17BF63;   
+}
+.tweet-action:nth-child(3):hover span{
+    color: #E0245E;
+}
+.tweet-action:last-child:hover span{
+    color: #794BC4;
+}
+
+.tweet-action:first-child:hover .icon{
+    /* 1DA1F2 */
+    filter: invert(63%) sepia(34%) saturate(1774%) hue-rotate(195deg) brightness(90%) contrast(92%);
+}
+.tweet-action:nth-child(2):hover .icon{
+    /* 17BF63 */
+    filter: invert(61%) sepia(44%) saturate(1978%) hue-rotate(116deg) brightness(90%) contrast(90%);
+}
+.tweet-action:nth-child(3):hover .icon{
+    /* E0245E */
+    filter: invert(62%) sepia(77%) saturate(2894%) hue-rotate(359deg) brightness(95%) contrast(91%);
+}
+.tweet-action:last-child:hover .icon{
+    /* 794BC4 */
+    filter: invert(56%) sepia(10%) saturate(1143%) hue-rotate(237deg) brightness(100%) contrast(91%);
 }
 
 /* ===================== Responsive ============================  */
 @media (min-width: 992px) and (max-width: 1115px) {
 
     .tweet-actions{
-        gap: 3rem;
+        gap: 2rem;
+        row-gap: 10px;
     }
     .tweet-action{
         gap: 10px;

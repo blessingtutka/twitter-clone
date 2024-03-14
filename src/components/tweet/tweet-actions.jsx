@@ -7,10 +7,10 @@ function TweetActions({data}){
     <div className='tweet-actions'>
       {actions.map((action, key) => {
         return (
-          <p key={key} className='tweet-action'>
+          <div role='button' key={key} className='tweet-action'>
             <Icon  src={action[0]} alt={key} />
             <span>{action[1]||''}</span>
-          </p>
+          </div>
         )}
       )}
     </div>
