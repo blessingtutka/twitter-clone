@@ -1,8 +1,35 @@
-import {useParams} from 'react-router-dom'
+import {useParams,useNavigate} from 'react-router-dom'
+import data from '../tools/data'
+import Button from '../components/global/button'
 
+const request = (info,nickname) => {
+    for (const obj of info) {
+      if (obj.title.details && obj.title.details.nickname === nickname) {
+        return obj;
+      }
+    }
+    
+    return undefined;
+  };
 export default function Profile() {
     const {username} = useParams()
+    const nav = useNavigate()
+    const {user, media} = data
+    const info = request(Object.values(media),username)
     return (
-    <div>{username}</div>
+    
+    <div className='profile'>
+        { info? 
+        <div className='info'>
+            <img src={info.avatar} alt={username} />
+            <div>
+                <h1>{info.title.author}</h1>
+                <p>@{username}</p>
+                <Button value='GO Home' action={() => nav('/')} />
+            </div>
+        </div>:<h1 className='anomynous'>Unknown</h1>
+        }
+
+    </div>
     )
 }

@@ -4,7 +4,7 @@ import {Link} from 'react-router-dom'
 import { avatar1,avatar2,avatar3 } from "../../../tools/media"
 import More from "./more"
 export default function Follow() {
-    let tofollow = [[avatar1,'The New York Times','nytimes'],[avatar2,'CNN','CNN'],[avatar3,'Twitter','Twitter']]
+    let tofollow = [[avatar2,'The New York Times','nytimes'],[avatar1,'CNN','CNN'],[avatar3,'Twitter','Twitter']]
     return (
       <div className="trend-box follow">
         <FollowTitle />

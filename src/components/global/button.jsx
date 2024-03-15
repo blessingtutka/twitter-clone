@@ -1,8 +1,8 @@
 import Icon from "./icon"
 import { twitter } from "../../tools/media"
-function Button({value}){
+function Button({value, action}){
     return (
-      <button className='button'><Icon src={twitter}/><span>{value}</span></button>
+      <button className='button' onClick={action}><Icon src={twitter}/><span>{value}</span></button>
     )
 }
 
