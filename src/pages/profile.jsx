@@ -1,5 +1,5 @@
 import {useParams,useNavigate} from 'react-router-dom'
-import data from '../tools/data'
+import data from '../tools/data.json'
 import Button from '../components/global/button'
 
 const request = (info,nickname) => {

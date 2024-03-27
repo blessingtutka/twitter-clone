@@ -360,6 +360,7 @@ body{
     border: none;
 }
 .button {
+    cursor: pointer;
     text-transform: capitalize;
     padding: .7rem 1.5rem;
     border: none;

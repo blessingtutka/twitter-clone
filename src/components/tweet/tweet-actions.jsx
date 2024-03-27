@@ -1,8 +1,10 @@
 import {reply,react,retweet,share} from '../../tools/media'
+import { useContext  } from 'react';
 import { Tooltip } from 'react-tooltip';
 import Icon from "../global/icon"
 
-function TweetActions({ data }) {
+function TweetActions({data}) {
+
   const actions = [
     { icon: reply, count: data.reply || '', tooltipContent: 'react' },
     { icon: retweet, count: data.retweet || '', tooltipContent: 'retweet' },

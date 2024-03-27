@@ -1,7 +1,9 @@
-function TweetEditorInput({placeholder}){
+import { Children } from "react";
+
+function TweetEditorInput({children}){
   return (
     <div >
-      <textarea className='tweet-editor-input' placeholder={placeholder}></textarea>
+      {children}
     </div>
   ); 
 }
