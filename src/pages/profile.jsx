@@ -1,6 +1,9 @@
-import {useParams,useNavigate} from 'react-router-dom'
-import data from '../tools/data.json'
-import Button from '../components/global/button'
+import { useContext } from 'react'
+import { useParams } from 'react-router-dom'
+
+import DataContext, { TweetContext } from '../tools/context';
+import Tweets from '../components/tweet/tweets';
+import ProfileInfo from '../components/profile/profile-info'
 
 const request = (info,nickname) => {
     for (const obj of info) {
@@ -10,26 +13,32 @@ const request = (info,nickname) => {
     }
     
     return undefined;
-  };
+};
+
 export default function Profile() {
+    const  {data, setData} = useContext(DataContext)
     const {username} = useParams()
-    const nav = useNavigate()
-    const {user, media} = data
-    const info = request(Object.values(media),username)
+    
+    const media = data.media
+    const user = data.user
+
+    const poster = request(media,username)
+    const isUser = user.username==username?true:false
+    const tweets = poster?[poster]:isUser?[...data.user.tweets]:[]
     return (
     
     <div className='profile'>
-        { info? 
-        <div className='info'>
-            <img src={info.avatar} alt={username} />
-            <div>
-                <h1>{info.title.author}</h1>
-                <p>@{username}</p>
-                <Button value='GO Home' action={() => nav('/')} />
-            </div>
-        </div>:<h1 className='anomynous'>Unknown</h1>
+        { poster? 
+          <ProfileInfo avatar={poster.avatar} name={poster.title.author} username={username} />
+        :isUser?
+          <ProfileInfo avatar={user.profile} name={user.name} username={username} />
+        :<h1>Unknown</h1>
         }
 
+        <TweetContext.Provider value={tweets}>
+          <Tweets />
+        </TweetContext.Provider>
     </div>
     )
 }
+

@@ -1,8 +1,8 @@
 import {createContext} from 'react'
 import data from './data.json'
 
-let TweetContext = createContext(data)
+export let TweetContext = createContext(data)
 
-export let UserTweetContext = createContext(data)
+let DataContext = createContext(data)
 
-export default TweetContext
+export default DataContext

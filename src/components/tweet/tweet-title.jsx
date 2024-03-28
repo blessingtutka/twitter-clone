@@ -1,6 +1,7 @@
+import {Link} from 'react-router-dom'
+
 import TweetTitleAuthor from './tweet-title-author'
 import TweetTitleDetails from './tweet-title-details'
-import {Link} from 'react-router-dom'
 
 function TweetTitle({author,details}){
 

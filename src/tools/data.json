@@ -1,6 +1,7 @@
 {
     "user": {
-      "username": "John Doe",
+      "name": "Bradley Ortiz",
+      "username": "bradley_",
       "profile": "/src/assets/Profile-Photo.jpg",
       "tweets": []
     },

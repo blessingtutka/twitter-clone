@@ -1,6 +1,8 @@
-import Tweet from "./tweet"
 import { useContext  } from 'react';
-import TweetContext from "../../tools/context";
+import { TweetContext } from "../../tools/context";
+
+import Tweet from "./tweet"
+
 function Tweets() {
     let tweets= useContext(TweetContext)
     return (
